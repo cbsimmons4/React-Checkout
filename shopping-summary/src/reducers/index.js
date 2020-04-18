@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import promoCodeReducer from './promoCodeReducers';
+import promoCodeReducer from './promoCodeReducer';
 
 export default combineReducers ({
     promoCode: promoCodeReducer

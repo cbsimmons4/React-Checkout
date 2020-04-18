@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
     Button,
     Collapse,
-    Well,
     Form,
     Row,
     Col,
@@ -17,7 +16,7 @@ class PromoCode extends Component {
     constructor (props){
         super (props)
         this.state = {
-            open: false,
+            open: false
         };
     } 
 
@@ -63,9 +62,6 @@ class PromoCode extends Component {
                     </div>
                 </Collapse>
             </div>
-           
-
-
         )
     }
 }
@@ -73,7 +69,6 @@ class PromoCode extends Component {
 const mapStateToProps = state => ({
     promoCode: state.promoCode.value
 })
+export default connect( mapStateToProps, {handleChange} )(PromoCode);
 
-
-export default connect(mapStateToProps,{handleChange})(PromoCode);
  
