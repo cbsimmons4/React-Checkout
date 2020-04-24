@@ -6,8 +6,8 @@ import TaxesFees from './components/TaxesFees/TaxesFees'
 import EstimatedTotal from './components/EstimatedTotal/EstimatedTotal'
 import ItemDetails from './components/ItemDetails/ItemDetails';
 import PromoCode from './components/PromoCode/PromoCode'
-import {connect} from './react-redux';
-import {handleChange} from './components/PromoCode/PromoCode';
+// import {connect} from './react-redux';
+// import {handleChange} from './components/PromoCode/PromoCode';
 import './App.css';
 
 function App() {
@@ -38,16 +38,18 @@ function App() {
         <ItemDetails price ={estTotal.toFixed(2)}/>
         <hr/>
         <PromoCode 
-          giveDiscount = { () => {
-            if (this.props.promoCode === 'DISCOUNT') {
-              setEstTotal(estTotal * 0.9,
-                () => {
-                  setDisablePromoButton(true);
-                }
-                );
-            }
-          }
-          }
+          // giveDiscount = { () => {
+          //   if (this.props.promoCode === 'DISCOUNT') {
+          //     setEstTotal(estTotal * 0.9,
+          //       () => {
+          //         setDisablePromoButton(true);
+          //       }
+          //       );
+          //   }
+          // }
+          // }
+          giveDiscount = {() => {}}
+
           isDisabled={disablePromoButton}
         />
       </Container>
@@ -55,9 +57,9 @@ function App() {
   );
 }
 
-const mapStateToProps = state => ({
-  promoCode: state.promoCode.value
-})
+// const mapStateToProps = state => ({
+//   promoCode: state.promoCode.value
+// })
 
-export default connect(mapStateToProps)(App);
-// export default App;
+// export default connect(mapStateToProps)(App);
+export default App;
